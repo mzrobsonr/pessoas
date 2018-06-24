@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTLgb" : {
+            "home": {
+                "title": "Scon T Lgbs",
+                "createLabel": "Criar novo Scon T Lgb",
+                "createOrEditLabel": "Criar ou editar Scon T Lgb"
+            },
+            "created": "Um novo Scon T Lgb foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Lgb foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Lgb foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Lgb {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Lgb"
+            },
+            "idlgb": "Idlgb",
+            "idlog": "Idlog",
+            "idbac": "Idbac",
+            "ceplgb": "Ceplgb",
+            "larguralog": "Larguralog",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTBac": "Scon T Bac",
+            "sconTLog": "Scon T Log"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTCon" : {
+            "home": {
+                "title": "Scon T Cons",
+                "createLabel": "Crear nuevo Scon T Con",
+                "createOrEditLabel": "Crear o editar Scon T Con"
+            },
+            "created": "Un nuevo Scon T Con ha sido creado con el identificador {{ param }}",
+            "updated": "Un Scon T Con ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Scon T Con ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Scon T Con {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Con"
+            },
+            "nome": "Nome",
+            "email": "Email",
+            "idlgbc": "Idlgbc",
+            "idlgbr": "Idlgbr",
+            "idlgbc": "Idlgbc",
+            "idlgbr": "Idlgbr",
+            "help": {
+                "nome": "The firstname attribute."
+            }
+        }
+    }
+}

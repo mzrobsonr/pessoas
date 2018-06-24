@@ -1,0 +1,76 @@
+{
+    "name": "SconTCid",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idufe",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idcid",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "iddic",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "iddic0",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cepcid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigoIbge",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigoIbge0",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "sconTUfe",
+            "otherEntityName": "sconTUfe",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idufe",
+            "otherEntityName": "sconTBac",
+            "otherEntityRelationshipName": "sconTCid"
+        }
+    ],
+    "changelogDate": "20180624122656",
+    "entityTableName": "scon_t_cid",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

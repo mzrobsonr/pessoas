@@ -1,0 +1,38 @@
+{
+    "name": "SconTBai",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idbai",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idbai",
+            "otherEntityName": "sconTBac",
+            "otherEntityRelationshipName": "sconTBai"
+        }
+    ],
+    "changelogDate": "20180624122657",
+    "entityTableName": "scon_t_bai",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

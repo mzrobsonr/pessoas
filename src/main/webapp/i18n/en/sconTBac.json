@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTBac" : {
+            "home": {
+                "title": "Scon T Bacs",
+                "createLabel": "Create a new Scon T Bac",
+                "createOrEditLabel": "Create or edit a Scon T Bac"
+            },
+            "created": "A new Scon T Bac is created with identifier {{ param }}",
+            "updated": "A Scon T Bac is updated with identifier {{ param }}",
+            "deleted": "A Scon T Bac is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Scon T Bac {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Bac"
+            },
+            "idbac": "Idbac",
+            "idbai": "Idbai",
+            "idcid": "Idcid",
+            "cepcid": "Cepcid",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTCid": "Scon T Cid",
+            "sconTBai": "Scon T Bai",
+            "idbac": "Idbac"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTUfe" : {
+            "home": {
+                "title": "Scon T Ufes",
+                "createLabel": "Crear nuevo Scon T Ufe",
+                "createOrEditLabel": "Crear o editar Scon T Ufe"
+            },
+            "created": "Un nuevo Scon T Ufe ha sido creado con el identificador {{ param }}",
+            "updated": "Un Scon T Ufe ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Scon T Ufe ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Scon T Ufe {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Ufe"
+            },
+            "descricao": "Descricao",
+            "idufe": "Idufe",
+            "idpai": "Idpai",
+            "codigo": "Codigo",
+            "codigoIbge": "Codigo Ibge",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTPai": "Scon T Pai",
+            "idufe": "Idufe"
+        }
+    }
+}

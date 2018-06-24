@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-scon-t-lgb-heading" jhiTranslate="pessoasApp.sconTLgb.home.createOrEditLabel">Create or edit a Scon T Lgb</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!sconTLgb.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sconTLgb.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.idlgb" for="field_idlgb">Idlgb</label>
+                    <input type="number" class="form-control" name="idlgb" id="field_idlgb"
+                        [(ngModel)]="sconTLgb.idlgb" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.idlog" for="field_idlog">Idlog</label>
+                    <input type="number" class="form-control" name="idlog" id="field_idlog"
+                        [(ngModel)]="sconTLgb.idlog" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.idbac" for="field_idbac">Idbac</label>
+                    <input type="number" class="form-control" name="idbac" id="field_idbac"
+                        [(ngModel)]="sconTLgb.idbac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.ceplgb" for="field_ceplgb">Ceplgb</label>
+                    <input type="text" class="form-control" name="ceplgb" id="field_ceplgb"
+                        [(ngModel)]="sconTLgb.ceplgb" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.larguralog" for="field_larguralog">Larguralog</label>
+                    <input type="number" class="form-control" name="larguralog" id="field_larguralog"
+                        [(ngModel)]="sconTLgb.larguralog" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.usuario" for="field_usuario">Usuario</label>
+                    <input type="text" class="form-control" name="usuario" id="field_usuario"
+                        [(ngModel)]="sconTLgb.usuario" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.timestamp" for="field_timestamp">Timestamp</label>
+                    <div class="input-group">
+                        <input id="field_timestamp" type="text" class="form-control" name="timestamp" ngbDatepicker  #timestampDp="ngbDatepicker" [(ngModel)]="sconTLgb.timestamp"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="timestampDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.sconTBac" for="field_sconTBac">Scon T Bac</label>
+                    <select class="form-control" id="field_sconTBac" name="sconTBac" [(ngModel)]="sconTLgb.sconTBac" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sconTBacOption.id === sconTLgb.sconTBac?.id ? sconTLgb.sconTBac : sconTBacOption" *ngFor="let sconTBacOption of scontbacs; trackBy: trackSconTBacById">{{sconTBacOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLgb.sconTLog" for="field_sconTLog">Scon T Log</label>
+                    <select class="form-control" id="field_sconTLog" name="sconTLog" [(ngModel)]="sconTLgb.sconTLog" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sconTLogOption.id === sconTLgb.sconTLog?.id ? sconTLgb.sconTLog : sconTLogOption" *ngFor="let sconTLogOption of scontlogs; trackBy: trackSconTLogById">{{sconTLogOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

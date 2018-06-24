@@ -1,0 +1,64 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pessoasApp.sconTTlg.home.title">Scon T Tlgs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-scon-t-tlg" [routerLink]="['/scon-t-tlg/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pessoasApp.sconTTlg.home.createLabel">
+            Create new Scon T Tlg
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sconTTlgs">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="codigo"><span jhiTranslate="pessoasApp.sconTTlg.codigo">Codigo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="descricao"><span jhiTranslate="pessoasApp.sconTTlg.descricao">Descricao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="idtlg"><span jhiTranslate="pessoasApp.sconTTlg.idtlg">Idtlg</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="iddic"><span jhiTranslate="pessoasApp.sconTTlg.iddic">Iddic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="usuario"><span jhiTranslate="pessoasApp.sconTTlg.usuario">Usuario</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="timestamp"><span jhiTranslate="pessoasApp.sconTTlg.timestamp">Timestamp</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let sconTTlg of sconTTlgs ;trackBy: trackId">
+                <td><a [routerLink]="['/scon-t-tlg', sconTTlg.id, 'view' ]">{{sconTTlg.id}}</a></td>
+                <td>{{sconTTlg.codigo}}</td>
+                <td>{{sconTTlg.descricao}}</td>
+                <td>{{sconTTlg.idtlg}}</td>
+                <td>{{sconTTlg.iddic}}</td>
+                <td>{{sconTTlg.usuario}}</td>
+                <td>{{sconTTlg.timestamp | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/scon-t-tlg', sconTTlg.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/scon-t-tlg', sconTTlg.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'scon-t-tlg/'+ sconTTlg.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

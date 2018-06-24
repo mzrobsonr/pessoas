@@ -1,0 +1,35 @@
+
+{
+    "pessoasApp": {
+        "sconTCid" : {
+            "home": {
+                "title": "Scon T Cids",
+                "createLabel": "Criar novo Scon T Cid",
+                "createOrEditLabel": "Criar ou editar Scon T Cid"
+            },
+            "created": "Um novo Scon T Cid foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Cid foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Cid foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Cid {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Cid"
+            },
+            "descricao": "Descricao",
+            "idufe": "Idufe",
+            "idcid": "Idcid",
+            "codigo": "Codigo",
+            "iddic": "Iddic",
+            "iddic0": "Iddic 0",
+            "cepcid": "Cepcid",
+            "codigoIbge": "Codigo Ibge",
+            "codigoIbge0": "Codigo Ibge 0",
+            "tipo": "Tipo",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTUfe": "Scon T Ufe",
+            "idufe": "Idufe"
+        }
+    }
+}

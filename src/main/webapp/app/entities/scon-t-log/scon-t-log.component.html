@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pessoasApp.sconTLog.home.title">Scon T Logs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-scon-t-log" [routerLink]="['/scon-t-log/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pessoasApp.sconTLog.home.createLabel">
+            Create new Scon T Log
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sconTLogs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLog.ceplog">Ceplog</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLog.descricao">Descricao</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLog.idlog">Idlog</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLog.idtlg">Idtlg</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLog.usuario">Usuario</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLog.timestamp">Timestamp</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLog.sconTTlg">Scon T Tlg</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sconTLog of sconTLogs ;trackBy: trackId">
+                <td><a [routerLink]="['/scon-t-log', sconTLog.id, 'view' ]">{{sconTLog.id}}</a></td>
+                <td>{{sconTLog.ceplog}}</td>
+                <td>{{sconTLog.descricao}}</td>
+                <td>{{sconTLog.idlog}}</td>
+                <td>{{sconTLog.idtlg}}</td>
+                <td>{{sconTLog.usuario}}</td>
+                <td>{{sconTLog.timestamp | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="sconTLog.sconTTlg">
+                        <a [routerLink]="['../scon-t-tlg', sconTLog.sconTTlg?.id, 'view' ]" >{{sconTLog.sconTTlg?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/scon-t-log', sconTLog.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/scon-t-log', sconTLog.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'scon-t-log/'+ sconTLog.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

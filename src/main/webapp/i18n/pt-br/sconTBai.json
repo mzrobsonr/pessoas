@@ -1,0 +1,26 @@
+
+{
+    "pessoasApp": {
+        "sconTBai" : {
+            "home": {
+                "title": "Scon T Bais",
+                "createLabel": "Criar novo Scon T Bai",
+                "createOrEditLabel": "Criar ou editar Scon T Bai"
+            },
+            "created": "Um novo Scon T Bai foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Bai foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Bai foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Bai {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Bai"
+            },
+            "descricao": "Descricao",
+            "idbai": "Idbai",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "idbai": "Idbai"
+        }
+    }
+}

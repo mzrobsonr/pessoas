@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sconTUfe">
+            <h2><span jhiTranslate="pessoasApp.sconTUfe.detail.title">Scon T Ufe</span> {{sconTUfe.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{sconTUfe.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.idufe">Idufe</span></dt>
+                <dd>
+                    <span>{{sconTUfe.idufe}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.idpai">Idpai</span></dt>
+                <dd>
+                    <span>{{sconTUfe.idpai}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{sconTUfe.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.codigoIbge">Codigo Ibge</span></dt>
+                <dd>
+                    <span>{{sconTUfe.codigoIbge}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{sconTUfe.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{sconTUfe.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTUfe.sconTPai">Scon T Pai</span></dt>
+                <dd>
+                    <div *ngIf="sconTUfe.sconTPai">
+                        <a [routerLink]="['/scon-t-pai', sconTUfe.sconTPai?.id, 'view']">{{sconTUfe.sconTPai?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scon-t-ufe', sconTUfe.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

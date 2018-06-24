@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sconTLgb">
+            <h2><span jhiTranslate="pessoasApp.sconTLgb.detail.title">Scon T Lgb</span> {{sconTLgb.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.idlgb">Idlgb</span></dt>
+                <dd>
+                    <span>{{sconTLgb.idlgb}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.idlog">Idlog</span></dt>
+                <dd>
+                    <span>{{sconTLgb.idlog}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.idbac">Idbac</span></dt>
+                <dd>
+                    <span>{{sconTLgb.idbac}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.ceplgb">Ceplgb</span></dt>
+                <dd>
+                    <span>{{sconTLgb.ceplgb}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.larguralog">Larguralog</span></dt>
+                <dd>
+                    <span>{{sconTLgb.larguralog}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{sconTLgb.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{sconTLgb.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.sconTBac">Scon T Bac</span></dt>
+                <dd>
+                    <div *ngIf="sconTLgb.sconTBac">
+                        <a [routerLink]="['/scon-t-bac', sconTLgb.sconTBac?.id, 'view']">{{sconTLgb.sconTBac?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLgb.sconTLog">Scon T Log</span></dt>
+                <dd>
+                    <div *ngIf="sconTLgb.sconTLog">
+                        <a [routerLink]="['/scon-t-log', sconTLgb.sconTLog?.id, 'view']">{{sconTLgb.sconTLog?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scon-t-lgb', sconTLgb.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

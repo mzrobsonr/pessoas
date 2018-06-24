@@ -1,0 +1,29 @@
+
+{
+    "pessoasApp": {
+        "sconTLog" : {
+            "home": {
+                "title": "Scon T Logs",
+                "createLabel": "Create a new Scon T Log",
+                "createOrEditLabel": "Create or edit a Scon T Log"
+            },
+            "created": "A new Scon T Log is created with identifier {{ param }}",
+            "updated": "A Scon T Log is updated with identifier {{ param }}",
+            "deleted": "A Scon T Log is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Scon T Log {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Log"
+            },
+            "ceplog": "Ceplog",
+            "descricao": "Descricao",
+            "idlog": "Idlog",
+            "idtlg": "Idtlg",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTTlg": "Scon T Tlg",
+            "idlog": "Idlog"
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "name": "SconTBac",
+    "fields": [
+        {
+            "fieldName": "idbac",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idbai",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idcid",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cepcid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "sconTCid",
+            "otherEntityName": "sconTCid",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "sconTBai",
+            "otherEntityName": "sconTBai",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idbac",
+            "otherEntityName": "sconTLgb",
+            "otherEntityRelationshipName": "sconTBac"
+        }
+    ],
+    "changelogDate": "20180624122658",
+    "entityTableName": "scon_t_bac",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sconTBai">
+            <h2><span jhiTranslate="pessoasApp.sconTBai.detail.title">Scon T Bai</span> {{sconTBai.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pessoasApp.sconTBai.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{sconTBai.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBai.idbai">Idbai</span></dt>
+                <dd>
+                    <span>{{sconTBai.idbai}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBai.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{sconTBai.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBai.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{sconTBai.timestamp}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scon-t-bai', sconTBai.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

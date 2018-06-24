@@ -38,6 +38,22 @@ public class CacheConfiguration {
             cm.createCache(br.com.adpmnet.mzrobsonr.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.adpmnet.mzrobsonr.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.adpmnet.mzrobsonr.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTPai.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTPai.class.getName() + ".idpais", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTUfe.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTUfe.class.getName() + ".idufes", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTCid.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTCid.class.getName() + ".idufes", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTBai.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTBai.class.getName() + ".idbais", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTBac.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTBac.class.getName() + ".idbacs", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTTlg.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTTlg.class.getName() + ".idtlgs", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTLog.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTLog.class.getName() + ".idlogs", jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTLgb.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.adpmnet.mzrobsonr.domain.SconTCon.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

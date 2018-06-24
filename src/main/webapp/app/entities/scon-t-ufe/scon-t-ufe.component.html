@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pessoasApp.sconTUfe.home.title">Scon T Ufes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-scon-t-ufe" [routerLink]="['/scon-t-ufe/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pessoasApp.sconTUfe.home.createLabel">
+            Create new Scon T Ufe
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sconTUfes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.descricao">Descricao</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.idufe">Idufe</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.idpai">Idpai</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.codigo">Codigo</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.codigoIbge">Codigo Ibge</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.usuario">Usuario</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.timestamp">Timestamp</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTUfe.sconTPai">Scon T Pai</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sconTUfe of sconTUfes ;trackBy: trackId">
+                <td><a [routerLink]="['/scon-t-ufe', sconTUfe.id, 'view' ]">{{sconTUfe.id}}</a></td>
+                <td>{{sconTUfe.descricao}}</td>
+                <td>{{sconTUfe.idufe}}</td>
+                <td>{{sconTUfe.idpai}}</td>
+                <td>{{sconTUfe.codigo}}</td>
+                <td>{{sconTUfe.codigoIbge}}</td>
+                <td>{{sconTUfe.usuario}}</td>
+                <td>{{sconTUfe.timestamp | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="sconTUfe.sconTPai">
+                        <a [routerLink]="['../scon-t-pai', sconTUfe.sconTPai?.id, 'view' ]" >{{sconTUfe.sconTPai?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/scon-t-ufe', sconTUfe.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/scon-t-ufe', sconTUfe.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'scon-t-ufe/'+ sconTUfe.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pessoasApp.sconTPai.home.title">Scon T Pais</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-scon-t-pai" [routerLink]="['/scon-t-pai/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pessoasApp.sconTPai.home.createLabel">
+            Create new Scon T Pai
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sconTPais">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTPai.descricao">Descricao</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTPai.idpai">Idpai</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTPai.usuario">Usuario</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTPai.timestamp">Timestamp</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sconTPai of sconTPais ;trackBy: trackId">
+                <td><a [routerLink]="['/scon-t-pai', sconTPai.id, 'view' ]">{{sconTPai.id}}</a></td>
+                <td>{{sconTPai.descricao}}</td>
+                <td>{{sconTPai.idpai}}</td>
+                <td>{{sconTPai.usuario}}</td>
+                <td>{{sconTPai.timestamp | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/scon-t-pai', sconTPai.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/scon-t-pai', sconTPai.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'scon-t-pai/'+ sconTPai.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

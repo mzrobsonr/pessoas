@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity SconTBac.
+    -->
+    <changeSet id="20180624122658-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="scontcid_id"
+                                 baseTableName="scon_t_bac"
+                                 constraintName="fk_scontbac_scontcid_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="scon_t_cid"/>
+
+        <addForeignKeyConstraint baseColumnNames="scontbai_id"
+                                 baseTableName="scon_t_bac"
+                                 constraintName="fk_scontbac_scontbai_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="scon_t_bai"/>
+
+    </changeSet>
+</databaseChangeLog>
