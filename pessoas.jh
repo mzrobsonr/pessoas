@@ -1,0 +1,126 @@
+
+entity SconTPai {
+	descricao String
+     idpai Integer
+     usuario String
+    timestamp LocalDate
+}
+
+entity SconTUfe {
+	descricao String,
+    idufe Integer,
+    idpai Integer,
+    codigo Integer,
+    codigoIbge String,
+    usuario String,
+    timestamp LocalDate
+}
+
+entity SconTCid {
+	descricao String,
+    idufe Integer,
+    idcid Integer,
+    codigo Integer,
+    iddic Integer,
+    iddic0 Integer,
+    cepcid String,
+    codigoIbge String,
+    codigoIbge0 String,
+    tipo Integer,
+    usuario String,
+    timestamp LocalDate
+}
+
+entity SconTBai {
+	descricao String,
+    idbai Integer,
+    usuario String,
+    timestamp LocalDate
+}
+
+entity SconTBac {
+    idbac Integer
+    idbai Integer
+    idcid Integer
+    cepcid String
+    usuario String
+    timestamp LocalDate
+}
+
+entity SconTTlg {
+	codigo String,
+	descricao String,
+    idtlg Integer,
+    iddic Integer,
+    usuario String,
+    timestamp LocalDate
+}
+
+entity SconTLog {
+	ceplog String,
+	descricao String,
+    idlog Integer,
+    idtlg Integer,
+    usuario String,
+    timestamp LocalDate
+}
+
+entity SconTLgb {
+    idlgb Integer,
+    idlog Integer,
+    idbac Integer,
+    ceplgb String,
+    larguralog Long,
+    usuario String,
+    timestamp LocalDate
+}
+// an ignored comment
+/** not an ignored comment */
+
+/**
+ * The Employee entity.
+ */
+entity SconTCon {
+	/**
+	* The firstname attribute.
+	*/
+    
+	nome String,
+	email String,
+    idlgbc Integer,
+    idlgbr Integer
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	SconTPai{idpai} to SconTUfe,
+	/**
+	* A relationship
+	*/
+	SconTUfe{idufe} to SconTCid,
+
+	SconTCid{idufe} to SconTBac,
+	SconTBai{idbai} to SconTBac,
+	SconTTlg{idtlg} to SconTLog,
+	SconTLog{idlog} to SconTLgb,
+    SconTBac{idbac} to SconTLgb
+}
+
+relationship OneToOne {
+    SconTCon{idlgbc} to SconTLgb
+    SconTCon{idlgbr} to SconTLgb
+}
+
+// Set pagination options
+paginate SconTTlg with infinite-scroll
+paginate SconTCon, SconTPai, SconTUfe, ScontCid, SconTLog, SconTBai, SconTBac, SconTLgb with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except SconTCon, SconTPai, SconTUfe, ScontCid, SconTLog, SconTBai, SconTBac, SconTLgb, SconTTlg
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
