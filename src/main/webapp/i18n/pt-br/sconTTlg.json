@@ -1,0 +1,28 @@
+
+{
+    "pessoasApp": {
+        "sconTTlg" : {
+            "home": {
+                "title": "Scon T Tlgs",
+                "createLabel": "Criar novo Scon T Tlg",
+                "createOrEditLabel": "Criar ou editar Scon T Tlg"
+            },
+            "created": "Um novo Scon T Tlg foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Tlg foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Tlg foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Tlg {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Tlg"
+            },
+            "codigo": "Codigo",
+            "descricao": "Descricao",
+            "idtlg": "Idtlg",
+            "iddic": "Iddic",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "idtlg": "Idtlg"
+        }
+    }
+}

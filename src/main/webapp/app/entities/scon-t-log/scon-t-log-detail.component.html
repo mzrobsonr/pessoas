@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sconTLog">
+            <h2><span jhiTranslate="pessoasApp.sconTLog.detail.title">Scon T Log</span> {{sconTLog.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pessoasApp.sconTLog.ceplog">Ceplog</span></dt>
+                <dd>
+                    <span>{{sconTLog.ceplog}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLog.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{sconTLog.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLog.idlog">Idlog</span></dt>
+                <dd>
+                    <span>{{sconTLog.idlog}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLog.idtlg">Idtlg</span></dt>
+                <dd>
+                    <span>{{sconTLog.idtlg}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLog.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{sconTLog.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLog.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{sconTLog.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTLog.sconTTlg">Scon T Tlg</span></dt>
+                <dd>
+                    <div *ngIf="sconTLog.sconTTlg">
+                        <a [routerLink]="['/scon-t-tlg', sconTLog.sconTTlg?.id, 'view']">{{sconTLog.sconTTlg?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scon-t-log', sconTLog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

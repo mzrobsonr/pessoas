@@ -1,0 +1,38 @@
+{
+    "name": "SconTPai",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idpai",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idpai",
+            "otherEntityName": "sconTUfe",
+            "otherEntityRelationshipName": "sconTPai"
+        }
+    ],
+    "changelogDate": "20180624122654",
+    "entityTableName": "scon_t_pai",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

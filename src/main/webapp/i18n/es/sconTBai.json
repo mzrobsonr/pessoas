@@ -1,0 +1,26 @@
+
+{
+    "pessoasApp": {
+        "sconTBai" : {
+            "home": {
+                "title": "Scon T Bais",
+                "createLabel": "Crear nuevo Scon T Bai",
+                "createOrEditLabel": "Crear o editar Scon T Bai"
+            },
+            "created": "Un nuevo Scon T Bai ha sido creado con el identificador {{ param }}",
+            "updated": "Un Scon T Bai ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Scon T Bai ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Scon T Bai {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Bai"
+            },
+            "descricao": "Descricao",
+            "idbai": "Idbai",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "idbai": "Idbai"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+{
+    "pessoasApp": {
+        "sconTCid" : {
+            "home": {
+                "title": "Scon T Cids",
+                "createLabel": "Crear nuevo Scon T Cid",
+                "createOrEditLabel": "Crear o editar Scon T Cid"
+            },
+            "created": "Un nuevo Scon T Cid ha sido creado con el identificador {{ param }}",
+            "updated": "Un Scon T Cid ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Scon T Cid ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Scon T Cid {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Cid"
+            },
+            "descricao": "Descricao",
+            "idufe": "Idufe",
+            "idcid": "Idcid",
+            "codigo": "Codigo",
+            "iddic": "Iddic",
+            "iddic0": "Iddic 0",
+            "cepcid": "Cepcid",
+            "codigoIbge": "Codigo Ibge",
+            "codigoIbge0": "Codigo Ibge 0",
+            "tipo": "Tipo",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTUfe": "Scon T Ufe",
+            "idufe": "Idufe"
+        }
+    }
+}

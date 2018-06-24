@@ -1,0 +1,26 @@
+
+{
+    "pessoasApp": {
+        "sconTPai" : {
+            "home": {
+                "title": "Scon T Pais",
+                "createLabel": "Criar novo Scon T Pai",
+                "createOrEditLabel": "Criar ou editar Scon T Pai"
+            },
+            "created": "Um novo Scon T Pai foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Pai foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Pai foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Pai {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Pai"
+            },
+            "descricao": "Descricao",
+            "idpai": "Idpai",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "idpai": "Idpai"
+        }
+    }
+}

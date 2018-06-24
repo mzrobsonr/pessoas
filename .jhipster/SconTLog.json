@@ -1,0 +1,52 @@
+{
+    "name": "SconTLog",
+    "fields": [
+        {
+            "fieldName": "ceplog",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idlog",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idtlg",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "sconTTlg",
+            "otherEntityName": "sconTTlg",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idlog",
+            "otherEntityName": "sconTLgb",
+            "otherEntityRelationshipName": "sconTLog"
+        }
+    ],
+    "changelogDate": "20180624122700",
+    "entityTableName": "scon_t_log",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

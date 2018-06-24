@@ -1,0 +1,46 @@
+{
+    "name": "SconTTlg",
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idtlg",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "iddic",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idtlg",
+            "otherEntityName": "sconTLog",
+            "otherEntityRelationshipName": "sconTTlg"
+        }
+    ],
+    "changelogDate": "20180624122659",
+    "entityTableName": "scon_t_tlg",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

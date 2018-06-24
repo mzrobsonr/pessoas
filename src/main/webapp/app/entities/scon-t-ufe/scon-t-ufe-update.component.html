@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-scon-t-ufe-heading" jhiTranslate="pessoasApp.sconTUfe.home.createOrEditLabel">Create or edit a Scon T Ufe</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!sconTUfe.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sconTUfe.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                        [(ngModel)]="sconTUfe.descricao" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.idufe" for="field_idufe">Idufe</label>
+                    <input type="number" class="form-control" name="idufe" id="field_idufe"
+                        [(ngModel)]="sconTUfe.idufe" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.idpai" for="field_idpai">Idpai</label>
+                    <input type="number" class="form-control" name="idpai" id="field_idpai"
+                        [(ngModel)]="sconTUfe.idpai" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.codigo" for="field_codigo">Codigo</label>
+                    <input type="number" class="form-control" name="codigo" id="field_codigo"
+                        [(ngModel)]="sconTUfe.codigo" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.codigoIbge" for="field_codigoIbge">Codigo Ibge</label>
+                    <input type="text" class="form-control" name="codigoIbge" id="field_codigoIbge"
+                        [(ngModel)]="sconTUfe.codigoIbge" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.usuario" for="field_usuario">Usuario</label>
+                    <input type="text" class="form-control" name="usuario" id="field_usuario"
+                        [(ngModel)]="sconTUfe.usuario" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.timestamp" for="field_timestamp">Timestamp</label>
+                    <div class="input-group">
+                        <input id="field_timestamp" type="text" class="form-control" name="timestamp" ngbDatepicker  #timestampDp="ngbDatepicker" [(ngModel)]="sconTUfe.timestamp"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="timestampDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTUfe.sconTPai" for="field_sconTPai">Scon T Pai</label>
+                    <select class="form-control" id="field_sconTPai" name="sconTPai" [(ngModel)]="sconTUfe.sconTPai" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sconTPaiOption.id === sconTUfe.sconTPai?.id ? sconTUfe.sconTPai : sconTPaiOption" *ngFor="let sconTPaiOption of scontpais; trackBy: trackSconTPaiById">{{sconTPaiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

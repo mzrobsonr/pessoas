@@ -1,0 +1,57 @@
+{
+    "name": "SconTUfe",
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idufe",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idpai",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "codigo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "codigoIbge",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "sconTPai",
+            "otherEntityName": "sconTPai",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "javadoc": "A relationship",
+            "relationshipName": "idufe",
+            "otherEntityName": "sconTCid",
+            "otherEntityRelationshipName": "sconTUfe"
+        }
+    ],
+    "changelogDate": "20180624122655",
+    "entityTableName": "scon_t_ufe",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

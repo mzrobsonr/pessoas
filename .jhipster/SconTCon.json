@@ -1,0 +1,50 @@
+{
+    "name": "SconTCon",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "javadoc": "The firstname attribute.",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idlgbc",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idlgbr",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "idlgbc",
+            "otherEntityName": "sconTLgb",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sconTCon"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "idlgbr",
+            "otherEntityName": "sconTLgb",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "sconTCon"
+        }
+    ],
+    "changelogDate": "20180624122702",
+    "javadoc": "The Employee entity.",
+    "entityTableName": "scon_t_con",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

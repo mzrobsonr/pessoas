@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTBac" : {
+            "home": {
+                "title": "Scon T Bacs",
+                "createLabel": "Criar novo Scon T Bac",
+                "createOrEditLabel": "Criar ou editar Scon T Bac"
+            },
+            "created": "Um novo Scon T Bac foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Bac foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Bac foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Bac {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Bac"
+            },
+            "idbac": "Idbac",
+            "idbai": "Idbai",
+            "idcid": "Idcid",
+            "cepcid": "Cepcid",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTCid": "Scon T Cid",
+            "sconTBai": "Scon T Bai",
+            "idbac": "Idbac"
+        }
+    }
+}

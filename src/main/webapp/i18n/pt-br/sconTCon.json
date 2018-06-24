@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTCon" : {
+            "home": {
+                "title": "Scon T Cons",
+                "createLabel": "Criar novo Scon T Con",
+                "createOrEditLabel": "Criar ou editar Scon T Con"
+            },
+            "created": "Um novo Scon T Con foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Con foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Con foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Con {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Con"
+            },
+            "nome": "Nome",
+            "email": "Email",
+            "idlgbc": "Idlgbc",
+            "idlgbr": "Idlgbr",
+            "idlgbc": "Idlgbc",
+            "idlgbr": "Idlgbr",
+            "help": {
+                "nome": "The firstname attribute."
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+
+{
+    "pessoasApp": {
+        "sconTTlg" : {
+            "home": {
+                "title": "Scon T Tlgs",
+                "createLabel": "Crear nuevo Scon T Tlg",
+                "createOrEditLabel": "Crear o editar Scon T Tlg"
+            },
+            "created": "Un nuevo Scon T Tlg ha sido creado con el identificador {{ param }}",
+            "updated": "Un Scon T Tlg ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Scon T Tlg ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Scon T Tlg {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Tlg"
+            },
+            "codigo": "Codigo",
+            "descricao": "Descricao",
+            "idtlg": "Idtlg",
+            "iddic": "Iddic",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "idtlg": "Idtlg"
+        }
+    }
+}

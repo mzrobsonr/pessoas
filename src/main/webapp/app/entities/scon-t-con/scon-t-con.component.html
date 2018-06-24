@@ -1,0 +1,72 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pessoasApp.sconTCon.home.title">Scon T Cons</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-scon-t-con" [routerLink]="['/scon-t-con/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pessoasApp.sconTCon.home.createLabel">
+            Create new Scon T Con
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sconTCons">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCon.nome">Nome</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCon.email">Email</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCon.idlgbc">Idlgbc</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCon.idlgbr">Idlgbr</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCon.idlgbc">Idlgbc</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCon.idlgbr">Idlgbr</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sconTCon of sconTCons ;trackBy: trackId">
+                <td><a [routerLink]="['/scon-t-con', sconTCon.id, 'view' ]">{{sconTCon.id}}</a></td>
+                <td>{{sconTCon.nome}}</td>
+                <td>{{sconTCon.email}}</td>
+                <td>{{sconTCon.idlgbc}}</td>
+                <td>{{sconTCon.idlgbr}}</td>
+                <td>
+                    <div *ngIf="sconTCon.idlgbc">
+                        <a [routerLink]="['../scon-t-lgb', sconTCon.idlgbc?.id, 'view' ]" >{{sconTCon.idlgbc?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sconTCon.idlgbr">
+                        <a [routerLink]="['../scon-t-lgb', sconTCon.idlgbr?.id, 'view' ]" >{{sconTCon.idlgbr?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/scon-t-con', sconTCon.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/scon-t-con', sconTCon.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'scon-t-con/'+ sconTCon.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-scon-t-log-heading" jhiTranslate="pessoasApp.sconTLog.home.createOrEditLabel">Create or edit a Scon T Log</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!sconTLog.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sconTLog.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLog.ceplog" for="field_ceplog">Ceplog</label>
+                    <input type="text" class="form-control" name="ceplog" id="field_ceplog"
+                        [(ngModel)]="sconTLog.ceplog" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLog.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                        [(ngModel)]="sconTLog.descricao" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLog.idlog" for="field_idlog">Idlog</label>
+                    <input type="number" class="form-control" name="idlog" id="field_idlog"
+                        [(ngModel)]="sconTLog.idlog" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLog.idtlg" for="field_idtlg">Idtlg</label>
+                    <input type="number" class="form-control" name="idtlg" id="field_idtlg"
+                        [(ngModel)]="sconTLog.idtlg" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLog.usuario" for="field_usuario">Usuario</label>
+                    <input type="text" class="form-control" name="usuario" id="field_usuario"
+                        [(ngModel)]="sconTLog.usuario" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLog.timestamp" for="field_timestamp">Timestamp</label>
+                    <div class="input-group">
+                        <input id="field_timestamp" type="text" class="form-control" name="timestamp" ngbDatepicker  #timestampDp="ngbDatepicker" [(ngModel)]="sconTLog.timestamp"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="timestampDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTLog.sconTTlg" for="field_sconTTlg">Scon T Tlg</label>
+                    <select class="form-control" id="field_sconTTlg" name="sconTTlg" [(ngModel)]="sconTLog.sconTTlg" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sconTTlgOption.id === sconTLog.sconTTlg?.id ? sconTLog.sconTTlg : sconTTlgOption" *ngFor="let sconTTlgOption of sconttlgs; trackBy: trackSconTTlgById">{{sconTTlgOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTUfe" : {
+            "home": {
+                "title": "Scon T Ufes",
+                "createLabel": "Criar novo Scon T Ufe",
+                "createOrEditLabel": "Criar ou editar Scon T Ufe"
+            },
+            "created": "Um novo Scon T Ufe foi criado com o identificador {{ param }}",
+            "updated": "Um Scon T Ufe foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Scon T Ufe foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Scon T Ufe {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Ufe"
+            },
+            "descricao": "Descricao",
+            "idufe": "Idufe",
+            "idpai": "Idpai",
+            "codigo": "Codigo",
+            "codigoIbge": "Codigo Ibge",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTPai": "Scon T Pai",
+            "idufe": "Idufe"
+        }
+    }
+}

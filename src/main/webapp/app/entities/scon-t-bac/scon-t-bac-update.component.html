@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-scon-t-bac-heading" jhiTranslate="pessoasApp.sconTBac.home.createOrEditLabel">Create or edit a Scon T Bac</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!sconTBac.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sconTBac.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.idbac" for="field_idbac">Idbac</label>
+                    <input type="number" class="form-control" name="idbac" id="field_idbac"
+                        [(ngModel)]="sconTBac.idbac" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.idbai" for="field_idbai">Idbai</label>
+                    <input type="number" class="form-control" name="idbai" id="field_idbai"
+                        [(ngModel)]="sconTBac.idbai" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.idcid" for="field_idcid">Idcid</label>
+                    <input type="number" class="form-control" name="idcid" id="field_idcid"
+                        [(ngModel)]="sconTBac.idcid" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.cepcid" for="field_cepcid">Cepcid</label>
+                    <input type="text" class="form-control" name="cepcid" id="field_cepcid"
+                        [(ngModel)]="sconTBac.cepcid" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.usuario" for="field_usuario">Usuario</label>
+                    <input type="text" class="form-control" name="usuario" id="field_usuario"
+                        [(ngModel)]="sconTBac.usuario" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.timestamp" for="field_timestamp">Timestamp</label>
+                    <div class="input-group">
+                        <input id="field_timestamp" type="text" class="form-control" name="timestamp" ngbDatepicker  #timestampDp="ngbDatepicker" [(ngModel)]="sconTBac.timestamp"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="timestampDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.sconTCid" for="field_sconTCid">Scon T Cid</label>
+                    <select class="form-control" id="field_sconTCid" name="sconTCid" [(ngModel)]="sconTBac.sconTCid" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sconTCidOption.id === sconTBac.sconTCid?.id ? sconTBac.sconTCid : sconTCidOption" *ngFor="let sconTCidOption of scontcids; trackBy: trackSconTCidById">{{sconTCidOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBac.sconTBai" for="field_sconTBai">Scon T Bai</label>
+                    <select class="form-control" id="field_sconTBai" name="sconTBai" [(ngModel)]="sconTBac.sconTBai" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sconTBaiOption.id === sconTBac.sconTBai?.id ? sconTBac.sconTBai : sconTBaiOption" *ngFor="let sconTBaiOption of scontbais; trackBy: trackSconTBaiById">{{sconTBaiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

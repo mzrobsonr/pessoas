@@ -1,0 +1,26 @@
+
+{
+    "pessoasApp": {
+        "sconTPai" : {
+            "home": {
+                "title": "Scon T Pais",
+                "createLabel": "Create a new Scon T Pai",
+                "createOrEditLabel": "Create or edit a Scon T Pai"
+            },
+            "created": "A new Scon T Pai is created with identifier {{ param }}",
+            "updated": "A Scon T Pai is updated with identifier {{ param }}",
+            "deleted": "A Scon T Pai is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Scon T Pai {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Pai"
+            },
+            "descricao": "Descricao",
+            "idpai": "Idpai",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "idpai": "Idpai"
+        }
+    }
+}

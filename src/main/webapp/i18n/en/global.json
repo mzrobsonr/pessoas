@@ -7,6 +7,15 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "sconTPai": "Scon T Pai",
+                "sconTUfe": "Scon T Ufe",
+                "sconTCid": "Scon T Cid",
+                "sconTBai": "Scon T Bai",
+                "sconTBac": "Scon T Bac",
+                "sconTTlg": "Scon T Tlg",
+                "sconTLog": "Scon T Log",
+                "sconTLgb": "Scon T Lgb",
+                "sconTCon": "Scon T Con",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

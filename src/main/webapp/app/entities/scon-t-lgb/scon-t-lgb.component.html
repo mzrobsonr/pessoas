@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pessoasApp.sconTLgb.home.title">Scon T Lgbs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-scon-t-lgb" [routerLink]="['/scon-t-lgb/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pessoasApp.sconTLgb.home.createLabel">
+            Create new Scon T Lgb
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sconTLgbs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.idlgb">Idlgb</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.idlog">Idlog</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.idbac">Idbac</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.ceplgb">Ceplgb</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.larguralog">Larguralog</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.usuario">Usuario</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.timestamp">Timestamp</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.sconTBac">Scon T Bac</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTLgb.sconTLog">Scon T Log</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sconTLgb of sconTLgbs ;trackBy: trackId">
+                <td><a [routerLink]="['/scon-t-lgb', sconTLgb.id, 'view' ]">{{sconTLgb.id}}</a></td>
+                <td>{{sconTLgb.idlgb}}</td>
+                <td>{{sconTLgb.idlog}}</td>
+                <td>{{sconTLgb.idbac}}</td>
+                <td>{{sconTLgb.ceplgb}}</td>
+                <td>{{sconTLgb.larguralog}}</td>
+                <td>{{sconTLgb.usuario}}</td>
+                <td>{{sconTLgb.timestamp | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="sconTLgb.sconTBac">
+                        <a [routerLink]="['../scon-t-bac', sconTLgb.sconTBac?.id, 'view' ]" >{{sconTLgb.sconTBac?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="sconTLgb.sconTLog">
+                        <a [routerLink]="['../scon-t-log', sconTLgb.sconTLog?.id, 'view' ]" >{{sconTLgb.sconTLog?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/scon-t-lgb', sconTLgb.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/scon-t-lgb', sconTLgb.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'scon-t-lgb/'+ sconTLgb.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sconTCid">
+            <h2><span jhiTranslate="pessoasApp.sconTCid.detail.title">Scon T Cid</span> {{sconTCid.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pessoasApp.sconTCid.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{sconTCid.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.idufe">Idufe</span></dt>
+                <dd>
+                    <span>{{sconTCid.idufe}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.idcid">Idcid</span></dt>
+                <dd>
+                    <span>{{sconTCid.idcid}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.codigo">Codigo</span></dt>
+                <dd>
+                    <span>{{sconTCid.codigo}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.iddic">Iddic</span></dt>
+                <dd>
+                    <span>{{sconTCid.iddic}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.iddic0">Iddic 0</span></dt>
+                <dd>
+                    <span>{{sconTCid.iddic0}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.cepcid">Cepcid</span></dt>
+                <dd>
+                    <span>{{sconTCid.cepcid}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.codigoIbge">Codigo Ibge</span></dt>
+                <dd>
+                    <span>{{sconTCid.codigoIbge}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.codigoIbge0">Codigo Ibge 0</span></dt>
+                <dd>
+                    <span>{{sconTCid.codigoIbge0}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{sconTCid.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{sconTCid.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{sconTCid.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCid.sconTUfe">Scon T Ufe</span></dt>
+                <dd>
+                    <div *ngIf="sconTCid.sconTUfe">
+                        <a [routerLink]="['/scon-t-ufe', sconTCid.sconTUfe?.id, 'view']">{{sconTCid.sconTUfe?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scon-t-cid', sconTCid.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

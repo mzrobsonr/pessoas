@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sconTBac">
+            <h2><span jhiTranslate="pessoasApp.sconTBac.detail.title">Scon T Bac</span> {{sconTBac.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pessoasApp.sconTBac.idbac">Idbac</span></dt>
+                <dd>
+                    <span>{{sconTBac.idbac}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBac.idbai">Idbai</span></dt>
+                <dd>
+                    <span>{{sconTBac.idbai}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBac.idcid">Idcid</span></dt>
+                <dd>
+                    <span>{{sconTBac.idcid}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBac.cepcid">Cepcid</span></dt>
+                <dd>
+                    <span>{{sconTBac.cepcid}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBac.usuario">Usuario</span></dt>
+                <dd>
+                    <span>{{sconTBac.usuario}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBac.timestamp">Timestamp</span></dt>
+                <dd>
+                    <span>{{sconTBac.timestamp}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBac.sconTCid">Scon T Cid</span></dt>
+                <dd>
+                    <div *ngIf="sconTBac.sconTCid">
+                        <a [routerLink]="['/scon-t-cid', sconTBac.sconTCid?.id, 'view']">{{sconTBac.sconTCid?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTBac.sconTBai">Scon T Bai</span></dt>
+                <dd>
+                    <div *ngIf="sconTBac.sconTBai">
+                        <a [routerLink]="['/scon-t-bai', sconTBac.sconTBai?.id, 'view']">{{sconTBac.sconTBai?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scon-t-bac', sconTBac.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

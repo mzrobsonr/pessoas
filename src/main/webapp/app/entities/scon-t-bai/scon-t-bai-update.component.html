@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="-scon-t-bai-heading" jhiTranslate="pessoasApp.sconTBai.home.createOrEditLabel">Create or edit a Scon T Bai</h2>
+            <div>
+                <-alert-error></-alert-error>
+                <div class="form-group" [hidden]="!sconTBai.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sconTBai.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBai.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                        [(ngModel)]="sconTBai.descricao" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBai.idbai" for="field_idbai">Idbai</label>
+                    <input type="number" class="form-control" name="idbai" id="field_idbai"
+                        [(ngModel)]="sconTBai.idbai" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBai.usuario" for="field_usuario">Usuario</label>
+                    <input type="text" class="form-control" name="usuario" id="field_usuario"
+                        [(ngModel)]="sconTBai.usuario" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pessoasApp.sconTBai.timestamp" for="field_timestamp">Timestamp</label>
+                    <div class="input-group">
+                        <input id="field_timestamp" type="text" class="form-control" name="timestamp" ngbDatepicker  #timestampDp="ngbDatepicker" [(ngModel)]="sconTBai.timestamp"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="timestampDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

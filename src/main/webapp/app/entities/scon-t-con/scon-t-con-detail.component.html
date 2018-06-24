@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sconTCon">
+            <h2><span jhiTranslate="pessoasApp.sconTCon.detail.title">Scon T Con</span> {{sconTCon.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pessoasApp.sconTCon.nome" [ngbTooltip]="'pessoasApp.sconTCon.help.nome' | translate">Nome</span></dt>
+                <dd>
+                    <span>{{sconTCon.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCon.email">Email</span></dt>
+                <dd>
+                    <span>{{sconTCon.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCon.idlgbc">Idlgbc</span></dt>
+                <dd>
+                    <span>{{sconTCon.idlgbc}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCon.idlgbr">Idlgbr</span></dt>
+                <dd>
+                    <span>{{sconTCon.idlgbr}}</span>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCon.idlgbc">Idlgbc</span></dt>
+                <dd>
+                    <div *ngIf="sconTCon.idlgbc">
+                        <a [routerLink]="['/scon-t-lgb', sconTCon.idlgbc?.id, 'view']">{{sconTCon.idlgbc?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="pessoasApp.sconTCon.idlgbr">Idlgbr</span></dt>
+                <dd>
+                    <div *ngIf="sconTCon.idlgbr">
+                        <a [routerLink]="['/scon-t-lgb', sconTCon.idlgbr?.id, 'view']">{{sconTCon.idlgbr?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/scon-t-con', sconTCon.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+
+{
+    "pessoasApp": {
+        "sconTLgb" : {
+            "home": {
+                "title": "Scon T Lgbs",
+                "createLabel": "Create a new Scon T Lgb",
+                "createOrEditLabel": "Create or edit a Scon T Lgb"
+            },
+            "created": "A new Scon T Lgb is created with identifier {{ param }}",
+            "updated": "A Scon T Lgb is updated with identifier {{ param }}",
+            "deleted": "A Scon T Lgb is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Scon T Lgb {{ id }}?"
+            },
+            "detail": {
+                "title": "Scon T Lgb"
+            },
+            "idlgb": "Idlgb",
+            "idlog": "Idlog",
+            "idbac": "Idbac",
+            "ceplgb": "Ceplgb",
+            "larguralog": "Larguralog",
+            "usuario": "Usuario",
+            "timestamp": "Timestamp",
+            "sconTBac": "Scon T Bac",
+            "sconTLog": "Scon T Log"
+        }
+    }
+}

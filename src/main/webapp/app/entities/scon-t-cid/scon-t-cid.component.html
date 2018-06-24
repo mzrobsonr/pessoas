@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pessoasApp.sconTCid.home.title">Scon T Cids</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-scon-t-cid" [routerLink]="['/scon-t-cid/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="pessoasApp.sconTCid.home.createLabel">
+            Create new Scon T Cid
+            </span>
+        </button>
+    </h2>
+    <-alert></-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="sconTCids">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.descricao">Descricao</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.idufe">Idufe</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.idcid">Idcid</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.codigo">Codigo</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.iddic">Iddic</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.iddic0">Iddic 0</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.cepcid">Cepcid</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.codigoIbge">Codigo Ibge</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.codigoIbge0">Codigo Ibge 0</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.tipo">Tipo</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.usuario">Usuario</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.timestamp">Timestamp</span></th>
+            <th><span jhiTranslate="pessoasApp.sconTCid.sconTUfe">Scon T Ufe</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sconTCid of sconTCids ;trackBy: trackId">
+                <td><a [routerLink]="['/scon-t-cid', sconTCid.id, 'view' ]">{{sconTCid.id}}</a></td>
+                <td>{{sconTCid.descricao}}</td>
+                <td>{{sconTCid.idufe}}</td>
+                <td>{{sconTCid.idcid}}</td>
+                <td>{{sconTCid.codigo}}</td>
+                <td>{{sconTCid.iddic}}</td>
+                <td>{{sconTCid.iddic0}}</td>
+                <td>{{sconTCid.cepcid}}</td>
+                <td>{{sconTCid.codigoIbge}}</td>
+                <td>{{sconTCid.codigoIbge0}}</td>
+                <td>{{sconTCid.tipo}}</td>
+                <td>{{sconTCid.usuario}}</td>
+                <td>{{sconTCid.timestamp | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="sconTCid.sconTUfe">
+                        <a [routerLink]="['../scon-t-ufe', sconTCid.sconTUfe?.id, 'view' ]" >{{sconTCid.sconTUfe?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/scon-t-cid', sconTCid.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/scon-t-cid', sconTCid.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'scon-t-cid/'+ sconTCid.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

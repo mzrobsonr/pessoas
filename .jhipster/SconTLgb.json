@@ -1,0 +1,56 @@
+{
+    "name": "SconTLgb",
+    "fields": [
+        {
+            "fieldName": "idlgb",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idlog",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idbac",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ceplgb",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "larguralog",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "usuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "timestamp",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "sconTBac",
+            "otherEntityName": "sconTBac",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "sconTLog",
+            "otherEntityName": "sconTLog",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180624122701",
+    "entityTableName": "scon_t_lgb",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
